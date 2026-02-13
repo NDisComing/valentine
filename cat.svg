@@ -1,0 +1,106 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .cat-body { fill: #ffffff; stroke: #ddd; stroke-width: 2; }
+      .ear { fill: #ffffff; stroke: #ddd; stroke-width: 2; }
+      .ear-inner { fill: #ffb7b2; } /* Pink inner ear */
+      .eye { fill: #333; }
+      .eye-shimmer { fill: white; opacity: 0.6; }
+      .nose { fill: #ffb7b2; }
+      .mouth { fill: none; stroke: #333; stroke-width: 2; stroke-linecap: round; }
+      .paw { fill: #ffffff; stroke: #ddd; stroke-width: 2; }
+      .rose-petal { fill: #ff0055; stroke: #cc0044; stroke-width: 1; }
+      .rose-stem { fill: #228b22; stroke: #116611; stroke-width: 2; }
+      .blush { fill: #ffb7b2; opacity: 0.6; }
+      
+      /* Animations */
+      .eyelid {
+        fill: #ffffff;
+        animation: blink 4s infinite;
+        transform-origin: top;
+      }
+      
+      .tail {
+        fill: none;
+        stroke: #ffffff;
+        stroke-width: 15;
+        stroke-linecap: round;
+        animation: tailWag 2s ease-in-out infinite alternate;
+        transform-origin: 200px 250px; /* Pivots from base */
+      }
+      
+      @keyframes blink {
+        0%, 90%, 100% { transform: scaleY(0); } /* Open */
+        95% { transform: scaleY(1); } /* Closed */
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+      }
+      
+      .whole-cat {
+        animation: float 3s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+
+  <g class="whole-cat">
+    <!-- Tail (behind) -->
+    <path class="tail" d="M200,250 Q230,200 220,150" stroke="#ddd" />
+
+    <!-- Body (simplified) -->
+    <ellipse cx="150" cy="220" rx="70" ry="60" class="cat-body" />
+
+    <!-- Ears -->
+    <path d="M100,100 L90,60 L130,90 Z" class="ear" /> <!-- Left Ear -->
+    <path d="M200,100 L210,60 L170,90 Z" class="ear" /> <!-- Right Ear -->
+    <path d="M105,95 L98,70 L120,90 Z" class="ear-inner" />
+    <path d="M195,95 L202,70 L180,90 Z" class="ear-inner" />
+
+    <!-- Head -->
+    <circle cx="150" cy="140" r="60" class="cat-body" stroke="#ddd" />
+    
+    <!-- Blush -->
+    <ellipse cx="115" cy="155" rx="10" ry="5" class="blush" />
+    <ellipse cx="185" cy="155" rx="10" ry="5" class="blush" />
+
+    <!-- Face -->
+    <circle cx="125" cy="135" r="8" class="eye" /> <!-- Left Eye -->
+    <circle cx="127" cy="133" r="2" class="eye-shimmer" />
+    <circle cx="175" cy="135" r="8" class="eye" /> <!-- Right Eye -->
+    <circle cx="177" cy="133" r="2" class="eye-shimmer" />
+
+    <!-- Eyelids (for blinking) -->
+    <!-- Positioned precisely over eyes to cover them -->
+    <rect x="115" y="125" width="20" height="20" class="eyelid" />
+    <rect x="165" y="125" width="20" height="20" class="eyelid" />
+
+    <!-- Nose & Mouth -->
+    <path d="M145,150 Q150,155 155,150" class="nose" /> <!-- Tiny nose -->
+    <path d="M150,155 L150,165 M150,165 Q135,175 125,160 M150,165 Q165,175 175,160" class="mouth" />
+
+    <!-- Paws holding bouquet -->
+    <ellipse cx="130" cy="190" rx="15" ry="12" class="paw" />
+    <ellipse cx="170" cy="190" rx="15" ry="12" class="paw" />
+
+    <!-- Roses Bouquet in Center -->
+    <g transform="translate(135, 170) scale(0.8)">
+       <!-- Stems -->
+       <path d="M0,20 L0,50" class="rose-stem" />
+       
+       <!-- Rose 1 (Center) -->
+       <circle cx="0" cy="10" r="10" class="rose-petal" />
+       <circle cx="3" cy="8" r="5" fill="#aa0033" opacity="0.5" />
+       
+       <!-- Rose 2 (Left) -->
+       <circle cx="-15" cy="15" r="9" class="rose-petal" />
+       
+       <!-- Rose 3 (Right) -->
+       <circle cx="15" cy="15" r="9" class="rose-petal" />
+       
+       <!-- Wrapper -->
+       <path d="M-20,30 L0,60 L20,30" fill="#ffcccc" opacity="0.8" />
+    </g>
+  </g>
+</svg>

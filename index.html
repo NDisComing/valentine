@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Outfit:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-decoration">
+            <!-- SVG or CSS doodle hearts could go here -->
+            <div class="heart-doodle">Wait...</div>
+        </div>
+
+        <div class="photo-frame">
+            <img src="wow.gif" alt="Her Cute Photo" id="main-photo">
+            <div class="caption">PLEASE...</div>
+        </div>
+
+        <h1 class="question">Fine girl, will you be my Valentine?</h1>
+
+        <div class="buttons">
+            <button id="yes-btn" onclick="goToYes()">Absolutely 💖</button>
+            <button id="no-btn" onmouseover="moveButton()" onclick="moveButton()">Ummm... 🤔</button>
+        </div>
+    </div>
+
+    <!-- Floating hearts background -->
+    <div class="floating-hearts"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
